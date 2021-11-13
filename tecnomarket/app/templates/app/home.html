@@ -1,0 +1,57 @@
+{% extends 'app/base.html'  %}
+{% load static %}
+{% block js  %}
+<script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
+<script>
+        $(document).ready(function() {
+          $('.slider').bxSlider({
+              mode: 'fade',//horizontal, vertical, fade
+              auto: true,
+              pause: 2000
+          });
+        });
+
+
+</script>
+{% endblock js %}
+{% block css  %}
+<link href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css" rel="stylesheet">
+{% endblock css %}
+
+
+{% block contenido%}
+<div class="slider">
+    <div>
+        <img alt="" src="{% static 'app/img/banner/banner1.jpg' %}">
+    </div>
+    <div>
+        <img alt="" src="{% static 'app/img/banner/banner2.png' %}">
+    </div>
+    <div>
+        <img alt="" src="{% static 'app/img/banner/banner3.jpg' %}">
+    </div>
+</div>
+{% load humanize %}
+<h2>Productos</h2>
+<div class="productos">
+    {% for producto in productos %}
+     <div class="producto">
+
+        <div class="contenedor_producto">
+            {% if producto.imagen %}
+            <img alt="imagen producto" src="{{producto.imagen.url}}">
+            {% endif %}
+            <div class="detalle">
+                <h5>{{producto.marca | capfirst}}</h5>
+                <h2>{{producto.nombre | title}}</h2>
+                <h3>{{producto.precio | intcomma}}</h3>
+            </div>
+
+        </div>
+
+    </div>
+    {% endfor %}
+</div>
+
+{% endblock %}
+
