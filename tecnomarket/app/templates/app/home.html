@@ -20,16 +20,15 @@
 
 
 {% block contenido%}
-<div class="slider">
-    <div>
-        <img alt="" src="{% static 'app/img/banner/banner1.jpg' %}">
+<div class="slider" style="height: 263.25px; ">
+    <div style="width:100%;">
+        <img style="width:100%;" alt="" src="{% static 'app/img/banner/banner1.jpg' %}" >
     </div>
-    <div>
-        <img alt="" src="{% static 'app/img/banner/banner2.png' %}">
+    <div style="width:100%;">
+        <img style="width:100%;     height: 34rem;" alt="" src="{% static 'app/img/banner/banner2.png' %}" >
     </div>
-    <div>
-        <img alt="" src="{% static 'app/img/banner/banner3.jpg' %}">
-    </div>
+
+
 </div>
 {% load humanize %}
 <h2>Productos</h2>
@@ -42,9 +41,9 @@
             <img alt="imagen producto" src="{{producto.imagen.url}}">
             {% endif %}
             <div class="detalle">
-                <h5>{{producto.marca | capfirst}}</h5>
-                <h2>{{producto.nombre | title}}</h2>
-                <h3>{{producto.precio | intcomma}}</h3>
+                <h5 class="textoCard">{{producto.marca | capfirst}}</h5>
+                <h2 class="textoCard">{{producto.nombre | title}}</h2>
+                <h3 class="textoCard">{{producto.precio | intcomma}}</h3>
             </div>
 
         </div>

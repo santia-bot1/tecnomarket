@@ -26,7 +26,8 @@ SECRET_KEY = 'django-insecure-lmf0y2#cbt8lquy*x=9&)!-!8qshtaku3+z65$_vtrp6pj0$yb
 DEBUG = True
 
 ALLOWED_HOSTS = []
-
+#mensajeria
+MESSAGE_STORAGE = 'django.contrib.messages.storage.cookie.CookieStorage'
 # imagenes
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')

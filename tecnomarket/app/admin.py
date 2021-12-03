@@ -27,7 +27,6 @@ class ProductosAdmin(admin.ModelAdmin):
 @admin.register(Contacto)
 class ContactoAdmin(admin.ModelAdmin):
     list_display = ['nombre', 'correo', 'tipo_consulta', 'avisos']
-    list_editable = ['correo']
     search_fields = ['nombre', 'correo']
     list_filter = ['tipo_consulta', 'avisos']
     list_per_page = 3
